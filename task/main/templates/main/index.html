@@ -1,0 +1,18 @@
+{% extends 'main/frag.html' %}
+
+{% block title %}
+Main page
+{% endblock %}
+
+{% block content %}
+  <h1>Add people</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.name }}<br>
+    {{ form.surname }}<br>
+    {{ form.date_of_birth }}<br>
+    <button type="submit" class = "btn btn-success">Save</button>
+    <span>{{ error }}</span>
+  </form>
+
+{% endblock %}
